@@ -514,6 +514,10 @@ contract PlagueModDaoAVAX is Ownable, IERC20 {
         require(amount >= _totalSupply / 2000);
         _maxTxAmount = amount;
     }
+
+    function getAccountReferInfo(address _account) public view returns(uint, uint, uint) {
+        return (totalReferrals[_account], totalRewards[_account], totalRewards[_account].div(totalReferrals[_account]));
+    }
     
     function getAccountDividendsInfo(address account)
         external view returns (
