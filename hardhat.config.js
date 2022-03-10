@@ -27,7 +27,7 @@ module.exports = {
       allowUnlimitedContractSize: true,
       timeout: 1800000,
       forking: {
-        url: "https://api.avax.network/ext/bc/C/rpc",
+        url: "https://andromeda.metis.io/?owner=1088",
       },
     },
     rinkeby: {
@@ -73,6 +73,18 @@ module.exports = {
       blockGasLimit: 10000000000,
       // gas: 2100000,
       // gasPrice: 8000000000,
+    },
+
+    metis: {
+      url: "https://andromeda.metis.io/?owner=1088",
+      chainId: 1088,
+      accounts: [],
+    },
+
+    stardust: {
+      url: "https://stardust.metis.io/?owner=588",
+      chainId: 588,
+      accounts: [],
     },
   },
 
