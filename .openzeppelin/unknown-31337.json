@@ -1,0 +1,817 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+    "txHash": "0x73113ba55d48f537f1c602f7709ed7a3fd215e67702f63e348fe6b25083e139e"
+  },
+  "proxies": [
+    {
+      "address": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+      "txHash": "0x8095ee492844c9bd70fa2aa19a6d35ab5327985ef4bb0184d096142be280e6a1",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+      "txHash": "0xbf1e5e5d258639ef722eb5e3df189951957f37dfa544b9a592dde46153e7ccf0",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "2142443136303e9ca7c40ab70669876ef0a2b0e9fff6f3f019a0b7abc56131db": {
+      "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "txHash": "0xeeffa387758451abe80e6548a05ab70de70dab1e4d381a0147a256ce7c26b4cd",
+      "layout": {
+        "storage": [
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_string_storage",
+            "contract": "ERC20DetailedUpgradeable",
+            "src": "contracts\\ARES\\X.sol:823"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage",
+            "contract": "ERC20DetailedUpgradeable",
+            "src": "contracts\\ARES\\X.sol:824"
+          },
+          {
+            "label": "_decimals",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint8",
+            "contract": "ERC20DetailedUpgradeable",
+            "src": "contracts\\ARES\\X.sol:825"
+          },
+          {
+            "label": "_initialized",
+            "offset": 1,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "contracts\\ARES\\X.sol:231"
+          },
+          {
+            "label": "_initializing",
+            "offset": 2,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "contracts\\ARES\\X.sol:236"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "contracts\\ARES\\X.sol:305"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "53",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "contracts\\ARES\\X.sol:323"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "54",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "contracts\\ARES\\X.sol:388"
+          },
+          {
+            "label": "_paused",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_bool",
+            "contract": "PausableUpgradeable",
+            "src": "contracts\\ARES\\X.sol:413"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "PausableUpgradeable",
+            "src": "contracts\\ARES\\X.sol:486"
+          },
+          {
+            "label": "pairContract",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_contract(IPancakeSwapPair)1252",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:862"
+          },
+          {
+            "label": "_isFeeExempt",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:863"
+          },
+          {
+            "label": "liquidityFee",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:877"
+          },
+          {
+            "label": "treasuryFee",
+            "offset": 0,
+            "slot": "156",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:878"
+          },
+          {
+            "label": "metisFee",
+            "offset": 0,
+            "slot": "157",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:879"
+          },
+          {
+            "label": "InsuranceFundFee",
+            "offset": 0,
+            "slot": "158",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:880"
+          },
+          {
+            "label": "treasuryExtraSellFee",
+            "offset": 0,
+            "slot": "159",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:881"
+          },
+          {
+            "label": "blackHoleFee",
+            "offset": 0,
+            "slot": "160",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:882"
+          },
+          {
+            "label": "totalFee",
+            "offset": 0,
+            "slot": "161",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:883"
+          },
+          {
+            "label": "feeDenominator",
+            "offset": 0,
+            "slot": "162",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:884"
+          },
+          {
+            "label": "DEAD",
+            "offset": 0,
+            "slot": "163",
+            "type": "t_address",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:886"
+          },
+          {
+            "label": "ZERO",
+            "offset": 0,
+            "slot": "164",
+            "type": "t_address",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:887"
+          },
+          {
+            "label": "autoLiquidityReceiver",
+            "offset": 0,
+            "slot": "165",
+            "type": "t_address",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:889"
+          },
+          {
+            "label": "treasuryReceiver",
+            "offset": 0,
+            "slot": "166",
+            "type": "t_address",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:890"
+          },
+          {
+            "label": "InsuranceFundReceiver",
+            "offset": 0,
+            "slot": "167",
+            "type": "t_address",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:891"
+          },
+          {
+            "label": "blackHole",
+            "offset": 0,
+            "slot": "168",
+            "type": "t_address",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:892"
+          },
+          {
+            "label": "swapEnabled",
+            "offset": 20,
+            "slot": "168",
+            "type": "t_bool",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:893"
+          },
+          {
+            "label": "router",
+            "offset": 0,
+            "slot": "169",
+            "type": "t_contract(IPancakeSwapRouter)1640",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:894"
+          },
+          {
+            "label": "pair",
+            "offset": 0,
+            "slot": "170",
+            "type": "t_address",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:895"
+          },
+          {
+            "label": "inSwap",
+            "offset": 20,
+            "slot": "170",
+            "type": "t_bool",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:896"
+          },
+          {
+            "label": "metisRewardStore",
+            "offset": 0,
+            "slot": "171",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:898"
+          },
+          {
+            "label": "_autoRebase",
+            "offset": 0,
+            "slot": "172",
+            "type": "t_bool",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:905"
+          },
+          {
+            "label": "_autoAddLiquidity",
+            "offset": 1,
+            "slot": "172",
+            "type": "t_bool",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:906"
+          },
+          {
+            "label": "_initRebaseStartTime",
+            "offset": 0,
+            "slot": "173",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:907"
+          },
+          {
+            "label": "_lastRebasedTime",
+            "offset": 0,
+            "slot": "174",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:908"
+          },
+          {
+            "label": "_lastAddLiquidityTime",
+            "offset": 0,
+            "slot": "175",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:909"
+          },
+          {
+            "label": "_totalSupply",
+            "offset": 0,
+            "slot": "176",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:911"
+          },
+          {
+            "label": "_gonsPerFragment",
+            "offset": 0,
+            "slot": "177",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:912"
+          },
+          {
+            "label": "_gonBalances",
+            "offset": 0,
+            "slot": "178",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:914"
+          },
+          {
+            "label": "_allowedFragments",
+            "offset": 0,
+            "slot": "179",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:915"
+          },
+          {
+            "label": "blacklist",
+            "offset": 0,
+            "slot": "180",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:916"
+          },
+          {
+            "label": "timeframeCurrent",
+            "offset": 0,
+            "slot": "181",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:918"
+          },
+          {
+            "label": "timeframeExpiresAfter",
+            "offset": 0,
+            "slot": "182",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:919"
+          },
+          {
+            "label": "maxTokenPerWalletPercent",
+            "offset": 0,
+            "slot": "183",
+            "type": "t_uint32",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:921"
+          },
+          {
+            "label": "timeframeQuotaInPercentage",
+            "offset": 0,
+            "slot": "184",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:923"
+          },
+          {
+            "label": "timeframeQuotaOutPercentage",
+            "offset": 0,
+            "slot": "185",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:924"
+          },
+          {
+            "label": "inAmounts",
+            "offset": 0,
+            "slot": "186",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_int256))",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:926"
+          },
+          {
+            "label": "outAmounts",
+            "offset": 0,
+            "slot": "187",
+            "type": "t_mapping(t_uint256,t_mapping(t_address,t_uint256))",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:927"
+          },
+          {
+            "label": "_metisRewardEnabled",
+            "offset": 0,
+            "slot": "188",
+            "type": "t_bool",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:929"
+          },
+          {
+            "label": "checkPoints",
+            "offset": 0,
+            "slot": "189",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:930"
+          },
+          {
+            "label": "disableAllFee",
+            "offset": 0,
+            "slot": "190",
+            "type": "t_bool",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:932"
+          },
+          {
+            "label": "distributorAddress",
+            "offset": 1,
+            "slot": "190",
+            "type": "t_address",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:934"
+          },
+          {
+            "label": "distributorGas",
+            "offset": 0,
+            "slot": "191",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:935"
+          },
+          {
+            "label": "devAddress",
+            "offset": 0,
+            "slot": "192",
+            "type": "t_address",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:937"
+          },
+          {
+            "label": "devFee",
+            "offset": 0,
+            "slot": "193",
+            "type": "t_uint256",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:938"
+          },
+          {
+            "label": "isOpen",
+            "offset": 0,
+            "slot": "194",
+            "type": "t_bool",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:940"
+          },
+          {
+            "label": "secureOperators",
+            "offset": 0,
+            "slot": "195",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "XFinance",
+            "src": "contracts\\ARES\\X.sol:942"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IPancakeSwapPair)1252": {
+            "label": "contract IPancakeSwapPair",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IPancakeSwapRouter)1640": {
+            "label": "contract IPancakeSwapRouter",
+            "numberOfBytes": "20"
+          },
+          "t_int256": {
+            "label": "int256",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_int256)": {
+            "label": "mapping(address => int256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_int256))": {
+            "label": "mapping(uint256 => mapping(address => int256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint256 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "5a20edb063b97441586d845858d75f8078d7af922765abb2af245c6fb53805bb": {
+      "address": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "txHash": "0x64ed3c30623ed38274d058d1568549549d57dbbd4e21bdfbca24114be9036907",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "contracts\\ARES\\Distributor.sol:231"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "contracts\\ARES\\Distributor.sol:236"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:305"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:323"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:388"
+          },
+          {
+            "label": "_paused",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_bool",
+            "contract": "PausableUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:413"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "PausableUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:486"
+          },
+          {
+            "label": "tokenAddress",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:828"
+          },
+          {
+            "label": "shareholders",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:836"
+          },
+          {
+            "label": "shareholderIndexes",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:837"
+          },
+          {
+            "label": "shareholderClaims",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:838"
+          },
+          {
+            "label": "shares",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_mapping(t_address,t_struct(Share)1744_storage)",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:840"
+          },
+          {
+            "label": "totalShares",
+            "offset": 0,
+            "slot": "156",
+            "type": "t_uint256",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:842"
+          },
+          {
+            "label": "totalDividends",
+            "offset": 0,
+            "slot": "157",
+            "type": "t_uint256",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:843"
+          },
+          {
+            "label": "totalDistributed",
+            "offset": 0,
+            "slot": "158",
+            "type": "t_uint256",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:844"
+          },
+          {
+            "label": "dividendsPerShare",
+            "offset": 0,
+            "slot": "159",
+            "type": "t_uint256",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:845"
+          },
+          {
+            "label": "dividendsPerShareAccuracyFactor",
+            "offset": 0,
+            "slot": "160",
+            "type": "t_uint256",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:846"
+          },
+          {
+            "label": "minPeriod",
+            "offset": 0,
+            "slot": "161",
+            "type": "t_uint256",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:848"
+          },
+          {
+            "label": "minDistribution",
+            "offset": 0,
+            "slot": "162",
+            "type": "t_uint256",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:849"
+          },
+          {
+            "label": "DEAD",
+            "offset": 0,
+            "slot": "163",
+            "type": "t_address",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:851"
+          },
+          {
+            "label": "ZERO",
+            "offset": 0,
+            "slot": "164",
+            "type": "t_address",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:852"
+          },
+          {
+            "label": "currentIndex",
+            "offset": 0,
+            "slot": "165",
+            "type": "t_uint256",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:854"
+          },
+          {
+            "label": "isDividendExempt",
+            "offset": 0,
+            "slot": "166",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:856"
+          },
+          {
+            "label": "isReentrant",
+            "offset": 0,
+            "slot": "167",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "DividendDistributorUpgradeable",
+            "src": "contracts\\ARES\\Distributor.sol:857"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Share)1744_storage)": {
+            "label": "mapping(address => struct DividendDistributorUpgradeable.Share)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Share)1744_storage": {
+            "label": "struct DividendDistributorUpgradeable.Share",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "totalExcluded",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "totalRealised",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    }
+  }
+}

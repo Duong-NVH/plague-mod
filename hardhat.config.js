@@ -3,6 +3,7 @@
  */
 
 require("@nomiclabs/hardhat-ethers");
+require("@openzeppelin/hardhat-upgrades");
 
 module.exports = {
   solidity: {
