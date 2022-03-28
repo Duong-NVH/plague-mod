@@ -1018,11 +1018,13 @@ contract XFinance is
 
         emit Transfer(address(0x0), treasuryReceiver, _totalSupply);
 
-        timeframeExpiresAfter = 24 hours;
-
         isOpen = false;
-        timeframeQuotaInPercentage = 400;
-        timeframeQuotaOutPercentage = 400;
+
+        maxTokenPerWalletPercent = 1; // max token per wallet (1 measn 1/10000 = 0.01% of the total supply)
+
+        timeframeExpiresAfter = 24 hours;
+        timeframeQuotaInPercentage = 1; // max token to recive in 24h (1 measn 1/10000 = 0.01% of the total supply)
+        timeframeQuotaOutPercentage = 1; // max token to send in 24h (1 measn 1/10000 = 0.01%)
 
     }
 
