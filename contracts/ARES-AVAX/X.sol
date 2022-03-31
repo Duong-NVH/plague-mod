@@ -973,8 +973,8 @@ contract AchillesAvax is
         swapEnabled = true;
         inSwap = false;
 
-        // // metis
-        router = IPancakeSwapRouter(0x81b9FA50D5f5155Ee17817C21702C3AE4780AD09);
+        // // trader joe
+        router = IPancakeSwapRouter(0x60aE616a2155Ee3d9A68541Ba4544862310933d4);
         // bsc testnet
         // router = IPancakeSwapRouter(0x1Ed675D5e63314B760162A3D1Cae1803DCFC87C7);
 
