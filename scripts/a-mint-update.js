@@ -6,7 +6,7 @@ async function main() {
   console.log("-----Upgrading-----")
 
   const Achilles = await ethers.getContractFactory("Achilles");
-  await ethers.forceImport(PROXY_ADDRESS,Achilles);
+  await upgrades.forceImport(PROXY_ADDRESS, Achilles);
 
 
   const AchillesMint = await ethers.getContractFactory("AchillesMint");
