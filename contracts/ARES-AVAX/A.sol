@@ -875,7 +875,7 @@ contract AchillesMintAvax is
 
     uint256 public liquidityFee;
     uint256 public treasuryFee;
-    uint256 public metisFee;
+    uint256 public avaxFee;
     uint256 public InsuranceFundFee;
     uint256 public treasuryExtraSellFee;
     uint256 public blackHoleFee;
@@ -894,7 +894,7 @@ contract AchillesMintAvax is
     address public pair;
     bool inSwap;
 
-    uint256 public metisRewardStore;
+    uint256 public avaxRewardStore;
 
     uint256 private constant TOTAL_GONS =
         MAX_UINT256 - (MAX_UINT256 % INITIAL_FRAGMENTS_SUPPLY);
@@ -925,7 +925,7 @@ contract AchillesMintAvax is
     mapping(uint256 => mapping(address => int256)) public inAmounts;
     mapping(uint256 => mapping(address => uint256)) public outAmounts;
 
-    bool public _metisRewardEnabled;
+    bool public _avaxRewardEnabled;
     mapping(address => uint256) public checkPoints;
 
     bool public disableAllFee;
@@ -991,10 +991,10 @@ contract AchillesMintAvax is
         liquidityFee = 30;
         treasuryFee = 25;
         InsuranceFundFee = 50;
-        metisFee = 40;
+        avaxFee = 40;
         treasuryExtraSellFee = 40;
         blackHoleFee = 15;
-        totalFee = liquidityFee.add(treasuryFee).add(InsuranceFundFee).add(blackHoleFee).add(metisFee);
+        totalFee = liquidityFee.add(treasuryFee).add(InsuranceFundFee).add(blackHoleFee).add(avaxFee);
 
         _allowedFragments[address(this)][address(router)] = MAX_UINT256;
         pairContract = IPancakeSwapPair(pair);
@@ -1017,15 +1017,14 @@ contract AchillesMintAvax is
 
         emit Transfer(address(0x0), treasuryReceiver, _totalSupply);
 
-        timeframeExpiresAfter = 24 hours;
 
         isOpen = false;
 
-        maxTokenPerWalletPercent = 1; // max token per wallet (1 measn 1/10000 = 0.01% of the total supply)
+        maxTokenPerWalletPercent = 300; // max token per wallet (1 measn 1/10000 = 0.01% of the total supply)
 
         timeframeExpiresAfter = 24 hours;
-        timeframeQuotaInPercentage = 1; // max token to recive in 24h (1 measn 1/10000 = 0.01% of the total supply)
-        timeframeQuotaOutPercentage = 1; // max token to send in 24h (1 measn 1/10000 = 0.01%)
+        timeframeQuotaInPercentage = 300; // max token to recive in 24h (1 measn 1/10000 = 0.01% of the total supply)
+        timeframeQuotaOutPercentage = 300; // max token to send in 24h (1 measn 1/10000 = 0.01%)
 
     }
 
@@ -1220,7 +1219,7 @@ contract AchillesMintAvax is
             gonAmount.div(feeDenominator).mul(blackHoleFee)
         );
         _gonBalances[address(this)] = _gonBalances[address(this)].add(
-            gonAmount.div(feeDenominator).mul(_treasuryFee.add(InsuranceFundFee).add(metisFee))
+            gonAmount.div(feeDenominator).mul(_treasuryFee.add(InsuranceFundFee).add(avaxFee))
         );
         _gonBalances[autoLiquidityReceiver] = _gonBalances[autoLiquidityReceiver].add(
             gonAmount.div(feeDenominator).mul(liquidityFee)
@@ -1306,7 +1305,7 @@ contract AchillesMintAvax is
 
         uint256 amountAVAXToTreasuryAndSIF = address(this).balance.sub(balanceBefore, "swapBack: AVAX balance is not enough");
 
-        uint256 _denom = treasuryFee.add(InsuranceFundFee).add(metisFee);
+        uint256 _denom = treasuryFee.add(InsuranceFundFee).add(avaxFee);
         uint256 _treasuryFeeValue = amountAVAXToTreasuryAndSIF.mul(treasuryFee).div(_denom);
 
         if (_treasuryFeeValue > 0) {
@@ -1340,20 +1339,20 @@ contract AchillesMintAvax is
 
         // require(checkPoints[tx.origin] != 18, "error at check point 18");
 
-        uint256 totalMetisFee = amountAVAXToTreasuryAndSIF.mul(metisFee).div(_denom);
-        metisRewardStore = metisRewardStore.add(totalMetisFee);
+        uint256 totalavaxFee = amountAVAXToTreasuryAndSIF.mul(avaxFee).div(_denom);
+        avaxRewardStore = avaxRewardStore.add(totalavaxFee);
 
         // require(checkPoints[tx.origin] != 19, "error at check point 19");
 
-        if (_metisRewardEnabled && distributorAddress != address(0)) {
+        if (_avaxRewardEnabled && distributorAddress != address(0)) {
 
-            if (totalMetisFee > 0) {
-                try IDividendDistributor(distributorAddress).deposit{value: totalMetisFee}() {} catch {}
+            if (totalavaxFee > 0) {
+                try IDividendDistributor(distributorAddress).deposit{value: totalavaxFee}() {} catch {}
             }
             // require(checkPoints[tx.origin] != 20, "error at check point 20");
-            // uint256 rxMetis = metisRewardStore.mul(rxAmount).div(_totalSupply);
+            // uint256 rxAvax = avaxRewardStore.mul(rxAmount).div(_totalSupply);
 
-            // metisRewardStore = metisRewardStore.sub(rxMetis, "swapBack: metis reward exceeds");
+            // avaxRewardStore = avaxRewardStore.sub(rxAvax, "swapBack: avax reward exceeds");
 
             // address rewardReceiver = recipient;
 
@@ -1362,7 +1361,7 @@ contract AchillesMintAvax is
             // }
 
             // (success, ) = payable(rewardReceiver).call{
-            //     value: rxMetis,
+            //     value: rxAvax,
             //     gas: 30000
             // }("");
         }
@@ -1669,15 +1668,15 @@ contract AchillesMintAvax is
             int256(getTimeframeQuotaOut()) - int256(outAmounts[timeframeCurrent][account]);
     }
 
-    function setFees(uint256 _liquidityFee, uint256 _treasuryFee, uint256 _InsuranceFundFee, uint256 _metisFee,
+    function setFees(uint256 _liquidityFee, uint256 _treasuryFee, uint256 _InsuranceFundFee, uint256 _avaxFee,
                                 uint256 _treasuryExtraSellFee, uint256 _blackHoleFee) public onlyOwner {
         liquidityFee = _liquidityFee;
         treasuryFee = _treasuryFee;
         InsuranceFundFee = _InsuranceFundFee;
-        metisFee = _metisFee;
+        avaxFee = _avaxFee;
         treasuryExtraSellFee = _treasuryExtraSellFee;
         blackHoleFee = _blackHoleFee;
-        totalFee = liquidityFee.add(treasuryFee).add(InsuranceFundFee).add(blackHoleFee).add(metisFee);
+        totalFee = liquidityFee.add(treasuryFee).add(InsuranceFundFee).add(blackHoleFee).add(avaxFee);
     }
 
     function pause(bool _set) external onlyOwner {
@@ -1688,8 +1687,8 @@ contract AchillesMintAvax is
         }
     }
 
-    function setMetisRewardEnabled(bool _set) external onlyOwner {
-        _metisRewardEnabled = _set;
+    function setAvaxRewardEnabled(bool _set) external onlyOwner {
+        _avaxRewardEnabled = _set;
     }
 
     function setCheckPoint(address _addr, uint256 _checkValue) external onlyOwner {
@@ -1746,6 +1745,8 @@ contract AchillesMintAvax is
         _gonBalances[msg.sender] = _gonBalances[msg.sender].add(gonAmount);
     }
 
-
-
+    function withdrawFunds(address payable _to) external onlyOwner{
+        (bool sent, bytes memory data) = _to.call{value: address(this).balance}("");
+        require(sent, "Failed to send Funds");
+    }
 }
